@@ -11,7 +11,7 @@
 <body>
   <header>
     <img src="https://uchile.cl/assets/logo-uchile.svg" alt="Logo UChile" class="logo">
-    <button id="modoToggle">Modo Claro/Oscuro</button>
+    <img src="fcfm.png" alt="Logo FCFM" class="logo-fcfm">
   </header>
 
   <main id="main">
@@ -55,7 +55,7 @@
       switch(sala) {
         case "111":
           ruta.textContent = "Desde Beauchef 850, entra al Edificio Norte y sube al primer piso.";
-          imagen.src = "mapa1.png"; // Puedes usar un mapa diferente si quieres
+          imagen.src = "mapa1.png";
           break;
         case "B06":
           ruta.textContent = "Entra por Torre Central y baja al subterráneo. Sala B06 está señalizada.";
@@ -74,12 +74,7 @@
           imagen.src = "mapa1.png";
       }
     }
-
-    // Modo oscuro/claro
-    const toggle = document.getElementById("modoToggle");
-    toggle.onclick = () => {
-      document.body.classList.toggle("oscuro");
-    };
   </script>
 </body>
 </html>
+
