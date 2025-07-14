@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tótem FCFM - Mapa de Salas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="main">
+    <h1 id="title">¿Cómo llegar a tu sala?</h1>
+
+    <div class="fotoplace">
+      <figure id="img-div">
+        <img id="image" src="mapa1.png" alt="Mapa Campus Beauchef">
+        <figcaption id="img-caption">Mapa del campus FCFM - Universidad de Chile</figcaption>
+        <div id="info">Selecciona tu sala abajo para ver orientación</div>
+      </figure>
+    </div>
+
+    <div class="selector">
+      <label for="salas">Elegir sala:</label>
+      <select id="salas" onchange="mostrarRuta()">
+        <option value="">-- Selecciona una sala --</option>
+        <option value="111">Sala 111 - Edificio Norte</option>
+        <option value="B06">B06 - Subterráneo Torre Central</option>
+        <option value="Biblioteca">Biblioteca Central</option>
+        <option value="Aula Magna">Aula Magna - Edificio Escuela</option>
+      </select>
+      <p id="ruta"></p>
+    </div>
+  </main>
+
+  <footer>
+    <p class="dedicatoria">Prototipo de Tótem interactivo - Proyecto FCFM UChile</p>
+    <div class="mas info">
+      <p><a href="#">Repositorio del Proyecto</a></p>
+    </div>
+  </footer>
+
+  <script>
+    function mostrarRuta() {
+      const sala = document.getElementById("salas").value;
+      const ruta = document.getElementById("ruta");
+
+      switch(sala) {
+        case "111":
+          ruta.textContent = "Desde Beauchef 850, entra al Edificio Norte y sube al primer piso.";
+          break;
+        case "B06":
+          ruta.textContent = "Entra por Torre Central y baja al subterráneo. Sala B06 está señalizada.";
+          break;
+        case "Biblioteca":
+          ruta.textContent = "La Biblioteca está al fondo del Edificio Escuela (entrada por Beauchef 850).";
+          break;
+        case "Aula Magna":
+          ruta.textContent = "Desde la entrada principal, avanza directo al Edificio Escuela.";
+          break;
+        default:
+          ruta.textContent = "";
+      }
+    }
+  </script>
+</body>
+</html>
