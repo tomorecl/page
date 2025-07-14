@@ -1,4 +1,3 @@
-/* Fuente y transiciones */
 body {
   margin: 0;
   padding: 0;
@@ -8,7 +7,6 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Encabezado */
 header {
   display: flex;
   justify-content: space-between;
@@ -22,20 +20,10 @@ header {
   height: 40px;
 }
 
-#modoToggle {
-  background-color: #2a7f8f;
-  color: white;
-  border: none;
-  padding: 0.5em 1em;
-  border-radius: 5px;
-  cursor: pointer;
+.logo-fcfm {
+  height: 40px;
 }
 
-#modoToggle:hover {
-  background-color: #256f7a;
-}
-
-/* Contenido principal */
 #main {
   text-align: center;
   padding: 2em 1em;
@@ -47,7 +35,6 @@ header {
   margin-bottom: 1em;
 }
 
-/* Imagen y figura */
 .fotoplace {
   margin: 0 auto 2em;
   max-width: 700px;
@@ -66,7 +53,6 @@ header {
   color: #555;
 }
 
-/* Selector de sala */
 .selector {
   margin: 2em auto;
   max-width: 400px;
@@ -90,7 +76,6 @@ select {
   color: #003366;
 }
 
-/* QR */
 #qr {
   margin-top: 2em;
 }
@@ -100,7 +85,6 @@ select {
   border-radius: 8px;
 }
 
-/* Footer */
 footer {
   margin-top: 4em;
   background-color: #003366;
@@ -108,27 +92,4 @@ footer {
   padding: 1.5em 1em;
   text-align: center;
   font-size: 0.95em;
-}
-
-/* 🌙 Modo oscuro */
-body.oscuro {
-  background-color: #121212;
-  color: #e0e0e0;
-}
-
-body.oscuro #title,
-body.oscuro #ruta {
-  color: #ffcc00;
-}
-
-body.oscuro header {
-  background-color: #1f1f1f;
-}
-
-body.oscuro footer {
-  background-color: #1f1f1f;
-}
-
-body.oscuro #modoToggle {
-  background-color: #444;
 }
