@@ -5,16 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tótem FCFM - Mapa de Salas</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <header>
+    <img src="https://uchile.cl/assets/logo-uchile.svg" alt="Logo UChile" class="logo">
+    <button id="modoToggle">Modo Claro/Oscuro</button>
+  </header>
+
   <main id="main">
-    <h1 id="title">¿Cómo llegar a tu sala?</h1>
+    <h1 id="title">Mapa de Salas - Tótem FCFM</h1>
 
     <div class="fotoplace">
       <figure id="img-div">
         <img id="image" src="mapa1.png" alt="Mapa Campus Beauchef">
-        <figcaption id="img-caption">Mapa del campus FCFM - Universidad de Chile</figcaption>
-        <div id="info">Selecciona tu sala abajo para ver orientación</div>
+        <figcaption id="img-caption">Selecciona tu sala para ver la ubicación en el mapa</figcaption>
       </figure>
     </div>
 
@@ -29,37 +35,51 @@
       </select>
       <p id="ruta"></p>
     </div>
+
+    <div id="qr">
+      <p>Escanea este código para abrir la ruta en tu celular:</p>
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://uchiletestdomain.netlify.app" alt="QR Link">
+    </div>
   </main>
 
   <footer>
     <p class="dedicatoria">Prototipo de Tótem interactivo - Proyecto FCFM UChile</p>
-    <div class="mas info">
-      <p><a href="#">Repositorio del Proyecto</a></p>
-    </div>
   </footer>
 
   <script>
     function mostrarRuta() {
       const sala = document.getElementById("salas").value;
       const ruta = document.getElementById("ruta");
+      const imagen = document.getElementById("image");
 
       switch(sala) {
         case "111":
           ruta.textContent = "Desde Beauchef 850, entra al Edificio Norte y sube al primer piso.";
+          imagen.src = "mapa1.png"; // Puedes usar un mapa diferente si quieres
           break;
         case "B06":
           ruta.textContent = "Entra por Torre Central y baja al subterráneo. Sala B06 está señalizada.";
+          imagen.src = "mapa1.png";
           break;
         case "Biblioteca":
           ruta.textContent = "La Biblioteca está al fondo del Edificio Escuela (entrada por Beauchef 850).";
+          imagen.src = "mapa1.png";
           break;
         case "Aula Magna":
           ruta.textContent = "Desde la entrada principal, avanza directo al Edificio Escuela.";
+          imagen.src = "mapa1.png";
           break;
         default:
           ruta.textContent = "";
+          imagen.src = "mapa1.png";
       }
     }
+
+    // Modo oscuro/claro
+    const toggle = document.getElementById("modoToggle");
+    toggle.onclick = () => {
+      document.body.classList.toggle("oscuro");
+    };
   </script>
 </body>
 </html>
